@@ -25,8 +25,8 @@ jobs:
         with:
          paths: ${{ github.workplace }}/target/site/jacoco/jacoco.xml
          token: ${{ secrets.GITHUB_TOKEN }}
-          min-coverage-overall: 40
-          min-coverage-changed-files: 60
+         min-coverage-overall: 40
+         min-coverage-changed-files: 60
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
