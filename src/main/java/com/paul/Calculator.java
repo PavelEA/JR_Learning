@@ -25,12 +25,6 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        LOGGER.info("Info lvl");
-        LOGGER.error("error lvl");
-        LOGGER.fatal("fatal lvl");
-        LOGGER.debug("debug lvl");
-        LOGGER.trace("trace lvl");
-
         System.out.println(calculator.minus(2, 2));
         System.out.println(calculator.multiply(20, 100));
         System.out.println(calculator.reverseNumber(112));
