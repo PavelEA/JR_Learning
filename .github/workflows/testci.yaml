@@ -18,16 +18,16 @@ jobs:
           java-version: '14'
           distribution: 'adopt'
       - name: Build with Maven
-          run: mvn --batch-mode --update-snapshots package
+        run: mvn --batch-mode --update-snapshots package
       - name: Add coverage to PR
-          id: jacoco
-          uses: madrapps/jacoco-report@v1.2
-          with:
-            paths: ${{ github.workplace }}/target/site/jacoco/jacoco.xml
-            token: ${{ secrets.GITHUB_TOKEN }}
-            min-coverage-overall: 40
-            min-coverage-changed-files: 60
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.2
+        with:
+          paths: ${{ github.workplace }}/target/site/jacoco/jacoco.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
       - uses: actions/upload-artifact@v3
-          with:
-            name: my-artifact
-            path: ${{ github.workspace }}/target/JRLearning-1.0-SNAPSHOT-jar-with-dependencies.jar
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/target/JRLearning-1.0-SNAPSHOT-jar-with-dependencies.jar
